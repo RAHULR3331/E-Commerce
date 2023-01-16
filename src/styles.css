@@ -1,5 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
-body{
-    font-family: 'East Sea Dokdo', cursive;
+
+body {
+  font-family: 'East Sea Dokdo', cursive;
 }
+
+.card-img-top {
+  width: 200px;
+  height: 250px;
+  transition: 0.5s;
+}
+
+.card-img-top:hover {
+
+  transform: scale(1.25);
+  transition: .5s;
+}
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+
+.p1 {
+  margin-top: 100px;
+}
+
+.p2 {
+  margin-top: 100px;
+}
+
+.p3 {
+  margin-top: 100px; 
+}
+

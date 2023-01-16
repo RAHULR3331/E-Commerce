@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../products/api.service';
+import { CartService } from '../products/cart.service';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  cartcount:number=0;
+
+  constructor(private api:ApiService,private cart:CartService) { }
 
   ngOnInit(): void {
+    this.cart.cartlist.subscribe(
+      (data)=>{
+        if(data){
+          this.cartcount=data.length
+        }
+      }
+    )
+  }
+  search(event:any){
+    let searchkey=event.target.value
+    this.api.searchkey.next(searchkey)
   }
 
 }
